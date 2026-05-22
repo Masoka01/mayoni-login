@@ -22,6 +22,38 @@ $(document).ready(function () {
     }
   });
 
+  // --- FITUR COPY KREDENSIAL ---
+  $(".copy-btn").on("click", function () {
+    const targetId = $(this).data("target");
+    const textToCopy = $("#" + targetId).text();
+    const btn = $(this);
+    const originalText = btn.text();
+
+    navigator.clipboard.writeText(textToCopy).then(function () {
+      // Ubah tampilan tombol jadi hijau dan teks 'Copied!'
+      btn
+        .text("Copied!")
+        .removeClass(
+          "bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-700",
+        )
+        .addClass(
+          "bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 hover:bg-green-300",
+        );
+
+      // Balikin tombol ke semula setelah 2 detik
+      setTimeout(function () {
+        btn
+          .text(originalText)
+          .removeClass(
+            "bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 hover:bg-green-300",
+          )
+          .addClass(
+            "bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-700",
+          );
+      }, 2000);
+    });
+  });
+
   // --- LOGIKA LOGIN (Khusus halaman index.html) ---
   $("#loginForm").submit(function (e) {
     e.preventDefault();
@@ -84,15 +116,12 @@ $(document).ready(function () {
   if (window.location.pathname.includes("dashboard.html")) {
     const activeUser = localStorage.getItem("activeUser");
 
-    // Tampilkan email user yang login
     if (activeUser) {
       $("#userDisplay").text(activeUser);
     } else {
-      // Kalau nggak ada data login, lempar balik ke depan
       window.location.href = "/";
     }
 
-    // Fungsi tombol Logout
     $("#logoutBtn").on("click", function () {
       localStorage.removeItem("activeUser");
       window.location.href = "/";

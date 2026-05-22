@@ -50,11 +50,51 @@
       </p>
 
       <div
-        class="mb-6 p-3 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg text-xs text-blue-800 dark:text-blue-300"
+        class="mb-6 p-4 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg text-blue-800 dark:text-blue-300"
       >
-        <strong>Gunakan akses ini untuk mencoba:</strong><br />
-        Email: <span class="font-mono">recapdata8@gmail.com</span><br />
-        Pass: <span class="font-mono">admin123</span>
+        <strong class="block mb-3 text-sm"
+          >Gunakan akses ini untuk mencoba:</strong
+        >
+
+        <div
+          class="flex items-center justify-between mb-2 bg-white dark:bg-slate-800 p-2 rounded-md border border-blue-100 dark:border-blue-800"
+        >
+          <div>
+            <span
+              class="text-[10px] uppercase font-bold tracking-wider opacity-70 block mb-1"
+              >Email</span
+            >
+            <span class="font-mono text-sm" id="demoEmail"
+              >recapdata8@gmail.com</span
+            >
+          </div>
+          <button
+            type="button"
+            class="copy-btn bg-blue-100 hover:bg-blue-200 dark:bg-blue-800 dark:hover:bg-blue-700 text-blue-700 dark:text-blue-200 px-3 py-1.5 rounded text-xs font-bold transition shadow-sm"
+            data-target="demoEmail"
+          >
+            Copy
+          </button>
+        </div>
+
+        <div
+          class="flex items-center justify-between bg-white dark:bg-slate-800 p-2 rounded-md border border-blue-100 dark:border-blue-800"
+        >
+          <div>
+            <span
+              class="text-[10px] uppercase font-bold tracking-wider opacity-70 block mb-1"
+              >Password</span
+            >
+            <span class="font-mono text-sm" id="demoPass">admin123</span>
+          </div>
+          <button
+            type="button"
+            class="copy-btn bg-blue-100 hover:bg-blue-200 dark:bg-blue-800 dark:hover:bg-blue-700 text-blue-700 dark:text-blue-200 px-3 py-1.5 rounded text-xs font-bold transition shadow-sm"
+            data-target="demoPass"
+          >
+            Copy
+          </button>
+        </div>
       </div>
 
       <div
