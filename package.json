@@ -1,0 +1,9 @@
+{
+  "name": "web-login",
+  "version": "1.0.0",
+  "description": "Menu login sederhana",
+  "main": "index.html",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.0"
+  }
+}
